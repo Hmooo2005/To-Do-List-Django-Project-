@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h3 style="margin:0">Add Task</h3>
+    <a href="{% url 'task_list' %}">&#8592 Back</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>Title: </label>
+        <input type="text" name="title-name">
+        <label>Description: </label>
+        <textarea name="description"></textarea>
+        <button class="button" type="submit">Save</button>
+    </form>
+</div>
+{% endblock content %}

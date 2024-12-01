@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h3 style="margin:0">Update Your Task</h3>
+    <a href="{% url 'task_list' %}">&#8592 Back</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>Title: </label>
+        <input type="text" name="title-name" value="{{ task.title }}">
+        <label>Description: </label>
+        <textarea name="description">{{ task.description }}</textarea>
+        <label>Complete <input type="checkbox" name="complete"></label>
+        <button style="margin-top: 10px" class="button" type="submit">Save</button>
+    </form>
+</div>
+
+
+{% endblock content %}
